@@ -1,14 +1,10 @@
+import underLine from '../.../../../../assets/Logo/Path 79.png'
 
 const BgTitle = ({ title }) => {
     return (
-        <div className="">
-            {/* CamperBrand Header */}
-            <div className="bg-[#DDDDDD] h-3 inline-block my-auto rounded-e-sm rounded-s-sm">
-                <h2 className=" text-2xl uppercase px-3 -mt-[10px]">{title}</h2>
-            </div>
-            <div>
-
-            </div>
+        <div className="relative">
+            <img className="w-80 h-5" src={underLine} alt="" />
+            <h1 className="text-2xl absolute -top-2 left-3 uppercase ">{title}</h1>
         </div>
     );
 };

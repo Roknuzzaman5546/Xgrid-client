@@ -11,7 +11,7 @@ const ProductsType = () => {
                 <div className=" relative">
                     <img className="" src={productsTypeImg} alt="" />
                     <div className="bg-[#111111b2] absolute top-0 h-full w-full">
-                        <div className=" flex flex-col items-end mt-16 md:mt-20 lg:mt-16 xl:mt-28 mr-2">
+                        <div className=" flex flex-col items-end mt-16 md:mt-20 lg:mt-16 xl:mt-20 mr-2">
                             <h2 className=' text-3xl text-white uppercase text-right'>Mod kit <br />bundles</h2>
                             <p className=" text-right text-white font-bold uppercase">+Shop now</p>
                         </div>
@@ -21,7 +21,7 @@ const ProductsType = () => {
                 <div className=" relative">
                     <img className="" src={productsTypeImg} alt="" />
                     <div className="bg-[#111111b2] absolute top-0 h-full w-full">
-                        <div className=" flex flex-col items-end mt-16 md:mt-20 lg:mt-16 xl:mt-28 mr-2 ">
+                        <div className=" flex flex-col items-end mt-16 md:mt-20 lg:mt-16 xl:mt-20 mr-2 ">
                             <h2 className=' text-3xl text-white uppercase text-right'>Camper <br />upgrade systems</h2>
                             <p className=" text-right text-white font-bold uppercase">+Shop now</p>
                         </div>
@@ -31,7 +31,7 @@ const ProductsType = () => {
                 <div className=" relative">
                     <img className="" src={productsTypeImg} alt="" />
                     <div className="bg-[#111111b2] absolute top-0 h-full w-full">
-                        <div className=" flex flex-col items-end mt-16 md:mt-20 lg:mt-16 xl:mt-28 mr-2">
+                        <div className=" flex flex-col items-end mt-16 md:mt-20 lg:mt-16 xl:mt-20 mr-2">
                             <h2 className=' text-3xl text-white uppercase text-right'>Products <br />& gear</h2>
                             <p className=" text-right text-white font-bold uppercase">+Shop now</p>
                         </div>

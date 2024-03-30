@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "title": "Remote Wilderness Adventure",
+        "place": "Deep Forest Campground",
+        "Bundle types": "Remote",
+        "model": "Wilderness Roamer XT",
+        "Camper upgrades": "Satellite communicator",
+        "Products & gear": "Bear spray",
+        "manufacturers": "Remote Adventures Ltd.",
+        "price": 1100,
+        "image": "https://example.com/remote_wilderness_adventure_image.jpg"
+    },
+    {
+        "id": 2,
+        "title": "Remote Wilderness Adventure",
+        "place": "Deep Forest Campground",
+        "Bundle types": "Remote",
+        "model": "Wilderness Roamer XT",
+        "Camper upgrades": "Satellite communicator",
+        "Products & gear": "Bear spray",
+        "manufacturers": "Remote Adventures Ltd.",
+        "price": 1100,
+        "image": "https://example.com/remote_wilderness_adventure_image.jpg"
+    },
+    {
+        "id": 3,
+        "title": "Remote Wilderness Adventure",
+        "place": "Deep Forest Campground",
+        "Bundle types": "Remote",
+        "model": "Wilderness Roamer XT",
+        "Camper upgrades": "Satellite communicator",
+        "Products & gear": "Bear spray",
+        "manufacturers": "Remote Adventures Ltd.",
+        "price": 1100,
+        "image": "https://example.com/remote_wilderness_adventure_image.jpg"
+    }
+]
