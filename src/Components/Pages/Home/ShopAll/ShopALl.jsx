@@ -1,12 +1,24 @@
+import { FaSearch } from "react-icons/fa";
 import BgTitle from "../../../Shared/title/BgTitle";
+import { useEffect, useState } from "react";
+import ShopAllDetails from "./ShopAllDetails";
 
 const ShopALl = () => {
+    const [products, setProducts] = useState([])
+
+    useEffect(() => {
+        fetch('/products.json')
+            .then(res => res.json())
+            .then(data => setProducts(data))
+    }, [])
+
+
     return (
         <div className="lg:max-w-screen-2xl w-11/12  mx-auto mt-10 mb-10">
             <BgTitle title={"Shop all"}></BgTitle>
             <section className=" grid grid-cols-1 md:grid-cols-12 mt-5">
                 {/* Shop all left part*/}
-                <div className=" w-full col-span-3 border-2 p-2">
+                <div className=" w-full col-span-3 p-2">
                     {/* filter header part  */}
                     <div className=" flex justify-between items-center mt-2">
                         <h2 className=" text-black font-bold">Filter</h2>
@@ -210,8 +222,35 @@ const ShopALl = () => {
                     </div>
                 </div>
                 {/* Shop all right side */}
-                <div className=" w-full col-span-9 border-2 ml-2">
-                    <h2>card part</h2>
+                <div className=" w-full col-span-9 ml-2 p-2">
+                    {/* search filter section */}
+                    <div className=" flex justify-end items-center gap-2 mb-3">
+                        <div className=' border-2 border-slate-400'>
+                            <input type="text" className=' w-48 focus:outline-0 border-none pl-2' placeholder='Search Products...' />
+                            <button className=' bg-[#2578B4] py-[11px] h-full px-4 text-white text-center'><FaSearch></FaSearch></button>
+                        </div>
+                        <select className=" max-w-xs w-52 border py-[10px] border-slate-400 pl-2">
+                            <option disabled selected>Sort by A-Z</option>
+                            <option>Java</option>
+                            <option>Go</option>
+                            <option>C</option>
+                            <option>C#</option>
+                            <option>C++</option>
+                            <option>Rust</option>
+                            <option>JavaScript</option>
+                            <option>Python</option>
+                        </select>
+                    </div>
+                    {/* Card section */}
+                    <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        {
+                            products.map((product, index) => (
+                                <div key={index}>
+                                    <ShopAllDetails product={product}></ShopAllDetails>
+                                </div>
+                            ))
+                        }
+                    </div>
                 </div>
             </section>
         </div>
