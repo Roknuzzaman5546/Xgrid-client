@@ -1,4 +1,4 @@
-import { FaFacebook } from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaMapMarkerAlt } from "react-icons/fa";
 
 const Footer = () => {
     return (
@@ -8,34 +8,47 @@ const Footer = () => {
                 <footer className="footer p-10 text-base-content">
                     <nav>
                         <div className=" border font-bold border-[#2578B4] w-full my-3"></div>
-                        <h6 className="footer-title">Services</h6>
-                        <a className="link link-hover">Branding</a>
-                        <a className="link link-hover">Design</a>
-                        <a className="link link-hover">Marketing</a>
-                        <a className="link link-hover">Advertisement</a>
+                        <h6 className=" font-extrabold text-black">Las Vegas, NV</h6>
+                        <a className="link link-hover text-black">6949 Speedway Blvd, Ste 109</a>
+                        <a className="link link-hover text-black">Las Vegas, NV</a>
+                        <a className=" flex items-center gap-1">
+                            <FaMapMarkerAlt className=" text-[#2578B4] font-bold" />
+                            <p className=" font-bold text-black">Map & Hours</p>
+                        </a>
+                        <a className="link link-hover text-xl font-extrabold mt-4">702.779.3397</a>
                     </nav>
                     <nav>
                         <div className=" border font-bold border-[#2578B4] w-full my-3"></div>
-                        <h6 className="footer-title">Knoxville, TN</h6>
-                        <a className="link link-hover">About us</a>
-                        <a className="link link-hover">Contact</a>
-                        <a className="link link-hover">Jobs</a>
-                        <a className="link link-hover">Press kit</a>
+                        <h6 className=" font-extrabold text-black">Knoxville, TN</h6>
+                        <a className="link link-hover text-black">490 Center Cross Lane</a>
+                        <a className="link link-hover text-black">Lenoir City, TN 97771</a>
+                        <a className=" flex items-center gap-1">
+                            <FaMapMarkerAlt className=" text-[#2578B4] font-bold" />
+                            <p className=" font-bold text-black">Map & Hours</p>
+                        </a>
+                        <a className="link link-hover text-xl font-extrabold mt-4">865.353.8880</a>
                     </nav>
                     <nav>
                         <div className=" border font-bold border-[#2578B4] w-full my-3"></div>
-                        <h6 className="footer-title">Find Your Ride</h6>
-                        <a className="link link-hover">Terms of use</a>
-                        <a className="link link-hover">Privacy policy</a>
-                        <a className="link link-hover">Cookie policy</a>
+                        <h6 className=" font-extrabold text-black">Find Your Ride</h6>
+                        <a className="link link-hover font-bold">Inventory</a>
+                        <a className="link link-hover font-bold">Rentals</a>
+                        <a className="link link-hover font-bold">Gallery</a>
+                        <a className="link link-hover font-bold">Careers</a>
+                        <a className="link link-hover font-bold">Contact Us</a>
                     </nav>
                     <form>
                         <div className=" border font-bold border-[#2578B4] w-full my-3"></div>
-                        <h6 className=" font-bold text-black">Get Social</h6>
-                        <h2 className=" flex justify-start gap-2">
-                            <FaFacebook></FaFacebook>
+                        <h6 className=" font-extrabold text-black">Get Social</h6>
+                        <h2 className=" flex justify-start gap-2 font-bold">
+                            <FaFacebookF></FaFacebookF>
                             <span>Facebook</span>
                         </h2>
+                        <h2 className=" flex justify-start gap-2 font-bold">
+                            <FaInstagram></FaInstagram>
+                            <span>Instagram</span>
+                        </h2>
+                        <p className=" text-black mt-4 font-bold">Sign Up For Our Newsletter</p>
                         <div className=' border-2 border-[#2578B4] rounded-md'>
                             <input type="text" className=' w-60 font-bold focus:outline-0 border-none pl-2 py-1' placeholder='Email Address...' />
                             <button className=' bg-[#2578B4] py-2 px-4 text-white font-bold text-center'>Go</button>

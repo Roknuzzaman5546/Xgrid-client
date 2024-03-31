@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import logoImg from '../../../assets/Logo/Rectangle 77.png'
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
 
@@ -8,7 +9,7 @@ const Navbar = () => {
             <section className='lg:max-w-screen-2xl w-11/12  mx-auto flex justify-around items-center'>
                 {/* Navbar image part */}
                 <div>
-                    <img className=' h-14' src={logoImg} alt="logo" />
+                    <Link to={"/"}><img className=' h-14' src={logoImg} alt="logo" /></Link>
                 </div>
                 {/* Navbar svg time and logo part */}
                 <div className=' flex items-center justify-around'>

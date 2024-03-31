@@ -1,19 +1,21 @@
 import { FaArrowRight, FaMapMarkerAlt } from "react-icons/fa";
 import { RiArrowDownSLine } from "react-icons/ri";
+import { Link } from "react-router-dom";
 
 const SubNavbar = () => {
     return (
         <div className=" bg-[#DDDDDD] h-12 mt-3">
-            <section className="lg:max-w-screen-2xl w-11/12  mx-auto flex justify-around items-around gap-[40px]">
+            <section className="lg:max-w-screen-2xl w-11/12  mx-auto flex justify-around items-around gap-[10px]">
                 {/* SubNavbar maps part */}
                 <div className=" flex items-center gap-1 ml-7">
                     <FaMapMarkerAlt className=" text-[#2578B4] font-bold" />
                     <p className=" font-bold text-black">Map & Hours</p>
                 </div>
                 {/* Menu part */}
-                <ul className=" flex items-center gap-10 font-bold text-black cursor-pointer">
+                <ul className=" flex items-center gap-5 font-bold text-black cursor-pointer uppercase">
                     <li className=" flex justify-center items-center gap-1">Sales <RiArrowDownSLine className=" text-[#2578B4]" /></li>
                     <li>Rentals</li>
+                    <Link to={'/brand'}><li>Brands</li></Link>
                     <li>Financing</li>
                     <li>News</li>
                     <li>Gallery</li>
