@@ -22,7 +22,9 @@ const SubNavbar = () => {
                     <li className=" flex justify-center items-center gap-1">Contact <RiArrowDownSLine className="text-[#2578B4]" /></li>
                 </ul>
                 {/* Book now btn */}
-                <button className=" bg-[#2578B4] h-full py-3 px-5 text-white font-bold flex items-center justify-around gap-2">BOOK NOW <FaArrowRight /></button>
+                <Link to="/dashboard/profile">
+                    <button className=" bg-[#2578B4] h-full py-3 px-5 text-white font-bold flex items-center justify-around gap-2">BOOK NOW <FaArrowRight /></button>
+                </Link>
             </section>
         </div>
     );

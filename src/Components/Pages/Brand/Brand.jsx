@@ -15,7 +15,16 @@ import brandImgTitle8 from '../../../assets/Brand/Rectangle 43.png'
 
 const Brand = () => {
     return (
-        <div className="lg:max-w-screen-2xl w-11/12  mx-auto my-16">
+        <div className="lg:max-w-screen-2xl w-11/12  mx-auto mt-16">
+            <div>
+                {/* this is brand div section */}
+                <h3 className=' text-lg  text-black'>Unmatched options and access</h3>
+                <h2 className=' text-3xl text-[#2578B4] my-2'>Out Partner Brands</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. <br /> Nostrum nam
+                    delectus distinctio sunt  corrupti! Exercitationem  voluptas porro dolor
+                    obcaecati error?
+                </p>
+            </div>
             {/* This is brand card section */}
             <section className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 mt-5">
                 {/* Brand 1 */}
