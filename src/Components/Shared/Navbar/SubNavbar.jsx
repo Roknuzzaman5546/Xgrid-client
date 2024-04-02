@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const SubNavbar = () => {
     return (
-        <div className=" bg-[#DDDDDD] h-12 mt-3">
+        <div className=" bg-[#DDDDDD] h-12">
             <section className="lg:max-w-screen-2xl w-11/12  mx-auto flex justify-around items-around gap-[10px]">
                 {/* SubNavbar maps part */}
                 <div className=" flex items-center gap-1 ml-7">

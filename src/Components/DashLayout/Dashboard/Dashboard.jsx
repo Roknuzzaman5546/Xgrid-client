@@ -1,40 +1,64 @@
-import { FaAddressBook, FaHotel, FaHouseDamage, FaList } from "react-icons/fa";
+import { FaBars, FaHouseDamage, } from "react-icons/fa";
+import { MdManageHistory } from "react-icons/md";
+import { FaHouse } from "react-icons/fa6";
 import { NavLink, Outlet } from "react-router-dom";
+import SubNavbar from "../../Shared/Navbar/SubNavbar";
+import { useState } from "react";
 
 const Dashboard = () => {
+    const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+    const toggleSidebar = () => {
+        setIsSidebarOpen(!isSidebarOpen);
+        // console.log(isSidebarOpen);
+    };
+
     return (
         <div>
-            <div className=" lg:flex hidden">
-                <div className=" w-64 min-h-screen shadow-md bg-[#2578B4] text-black font-mono font-bold text-xl flex flex-col items-center rounded-md border-2 pb-5">
-                    {/* <div className=' flex flex-col items-center mb-2 mt-5'>
-                        <img className=' w-28 h-28 rounded-full' src={user?.photoURL} alt="" />
-                        <h2 className=' text-2xl mt-2 font-bold font-alfa'>{user?.displayName}</h2>
-                        <p className=" text-xs ">{user?.email}</p>
-                    </div> */}
-                    <ul className="menu">
-                        {
-                            <>
-                                <li><NavLink to="/dashboard/profile">
-                                    <FaHotel></FaHotel>
-                                    My Choice List</NavLink>
-                                </li>
-                                <li><NavLink to="/dashboard/choicelist">
-                                    <FaList></FaList>
-                                    My Choice List</NavLink>
-                                </li>
-                            </>
-                        }
-                        <div className="divider"></div>
-                        <li><NavLink to="/">
-                            <FaHouseDamage></FaHouseDamage>
-                            Home</NavLink></li>
-                        <li><NavLink to="/allplace">
-                            <FaAddressBook></FaAddressBook>
-                            All places</NavLink></li>
-                        <li><NavLink to="/hotel">
-                            <FaHotel></FaHotel>
-                            All Hotel</NavLink></li>
-                    </ul>
+            <div className=" md:block hidden">
+                <SubNavbar></SubNavbar>
+            </div>
+            <div className=" block lg:hidden" onClick={toggleSidebar}>
+                <FaBars></FaBars>
+            </div>
+            <div className="flex ">
+                <div className={`min-h-screen w-64 xl:min-w-[300px] xs:fixed z-[99999] lg:z-0 text-white transition-all duration-300 ${isSidebarOpen ? "-ml-60 lg:ml-0" : "lg:-ml-64 xl:-ml-[300px]"
+                    }`}>
+                    {/* dashNav profile */}
+                    <div className="w-60 flex items-center justify-center gap-2 overflow-hidden bg-[#2578B4] rounded-lg border-2 p-5 mb-1 mt-2">
+                        <img className=" w-16 h-10 rounded-full" src="https://i.ibb.co/B6zjvx1/profile-pic-4.png" alt="" />
+                        <div>
+                            <h2 className=" font-bold text-black">{"Rokon khan"}</h2>
+                            <p className=" text-xs font-bold text-black">{"Rokonkhan45@gamil.com"}</p>
+                        </div>
+                    </div>
+                    {/* dashNavbar menu */}
+                    <div className=" w-60 min-h-screen shadow-md bg-[#2578B4] text-black font-mono font-bold text-xl flex flex-col items-center rounded-md border-2 pb-5 pt-3">
+                        {/* Xgrid logo */}
+                        <div className=" text-center">
+                        </div>
+                        <ul className="menu">
+                            {
+                                <>
+                                    <li><NavLink to="/dashboard/profile">
+                                        <FaHouse></FaHouse>
+                                        Profile</NavLink>
+                                    </li>
+                                    <li><NavLink to="/dashboard/choicelist">
+                                        <MdManageHistory />
+                                        Manege Products</NavLink>
+                                    </li>
+                                    <li><NavLink to="/dashboard/choicelist">
+                                        <MdManageHistory />
+                                        Add Products</NavLink>
+                                    </li>
+                                </>
+                            }
+                            <div className="divider"></div>
+                            <li><NavLink to="/">
+                                <FaHouseDamage></FaHouseDamage>
+                                Home</NavLink></li>
+                        </ul>
+                    </div>
                 </div>
                 {/* outlet for lg device */}
                 <div className=" flex-1">

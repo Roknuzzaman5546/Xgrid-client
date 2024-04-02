@@ -5,7 +5,7 @@ import { FaFacebookF, FaInstagram } from "react-icons/fa";
 
 const Navbar = () => {
     return (
-        <div className=' mt-5'>
+        <div className=' mt-5 mb-3'>
             <section className='lg:max-w-screen-2xl w-11/12  mx-auto flex justify-around items-center'>
                 {/* Navbar image part */}
                 <div>
