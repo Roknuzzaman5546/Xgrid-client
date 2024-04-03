@@ -4,7 +4,6 @@ import { useForm } from 'react-hook-form';
 import { FaPhotoVideo } from 'react-icons/fa';
 
 const AddProducts = () => {
-
     const [blogImages, setBlogImages] = useState([])
     const [showBlogImages, setShowBlogImages] = useState([])
     const [isBlogDragging, setIsBlogDragging] = useState(false)
