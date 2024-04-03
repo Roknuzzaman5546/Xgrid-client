@@ -8,7 +8,7 @@ const AddProducts = () => {
     const [showBlogImages, setShowBlogImages] = useState([])
     const [isBlogDragging, setIsBlogDragging] = useState(false)
     const fileBlogInputRef = useRef(null)
-    console.log(showBlogImages)
+    // console.log(showBlogImages)
     // const image_hosting_api =
     //     "https://api.imgbb.com/1/upload?key=041c88632a7cf1ed57bab64c7c558177";
 

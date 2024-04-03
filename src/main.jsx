@@ -12,6 +12,14 @@ import Dashboard from './Components/DashLayout/Dashboard/Dashboard';
 import Profile from './Components/DashLayout/DashPages/Profile/Profile';
 import AddProducts from './Components/DashLayout/DashPages/Products/AddProducts';
 import ManegeProducts from './Components/DashLayout/DashPages/Products/ManegeProducts';
+import {
+  QueryClient,
+  QueryClientProvider,
+} from '@tanstack/react-query'
+import AuthProvider from './Components/AuthProvider/AuthProvider';
+import Login from './Components/Authentication/Login';
+import Register from './Components/Authentication/Register';
+const queryClient = new QueryClient()
 
 const router = createBrowserRouter([
   {
@@ -25,6 +33,14 @@ const router = createBrowserRouter([
       {
         path: "/brand",
         element: <Brand></Brand>
+      },
+      {
+        path: "/login",
+        element: <Login></Login>
+      },
+      {
+        path: "/register",
+        element: <Register></Register>
       }
     ]
   },
@@ -37,8 +53,8 @@ const router = createBrowserRouter([
         element: <Profile></Profile>
       },
       {
-      path: "addProducts",
-      element: <AddProducts></AddProducts>
+        path: "addProducts",
+        element: <AddProducts></AddProducts>
       },
       {
         path: "manegeProducts",
@@ -50,6 +66,10 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <QueryClientProvider client={queryClient}>
+      <AuthProvider>
+        <RouterProvider router={router} />
+      </AuthProvider>
+    </QueryClientProvider>
   </React.StrictMode>,
 )

@@ -1,17 +1,10 @@
 import { FaSearch } from "react-icons/fa";
 import BgTitle from "../../../Shared/title/BgTitle";
-import { useEffect, useState } from "react";
 import ShopAllDetails from "./ShopAllDetails";
+import useGetProducts from "../../../Hooks/useGetProducts";
 
 const ShopALl = () => {
-    const [products, setProducts] = useState([])
-
-    useEffect(() => {
-        fetch('/products.json')
-            .then(res => res.json())
-            .then(data => setProducts(data))
-    }, [])
-
+    const [products] = useGetProducts();
 
     return (
         <div className="lg:max-w-screen-2xl w-11/12  mx-auto mt-10 mb-10">

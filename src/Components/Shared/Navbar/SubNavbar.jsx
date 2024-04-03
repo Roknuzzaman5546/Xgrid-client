@@ -1,8 +1,11 @@
+import { useContext } from "react";
 import { FaArrowRight, FaMapMarkerAlt } from "react-icons/fa";
 import { RiArrowDownSLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const SubNavbar = () => {
+    const { user } = useContext(AuthContext)
     return (
         <div className=" bg-[#DDDDDD] h-12">
             <section className="lg:max-w-screen-2xl w-11/12  mx-auto flex justify-around items-around gap-[10px]">
@@ -22,9 +25,15 @@ const SubNavbar = () => {
                     <li className=" flex justify-center items-center gap-1">Contact <RiArrowDownSLine className="text-[#2578B4]" /></li>
                 </ul>
                 {/* Book now btn */}
-                <Link to="/dashboard/profile">
-                    <button className=" bg-[#2578B4] h-full py-3 px-5 text-white font-bold flex items-center justify-around gap-2">BOOK NOW <FaArrowRight /></button>
-                </Link>
+                {
+                    user ?
+                        <div>
+
+                        </div> :
+                        <Link to="/dashboard/profile">
+                            <button className=" bg-[#2578B4] h-full py-3 px-5 text-white font-bold flex items-center justify-around gap-2">BOOK NOW <FaArrowRight /></button>
+                        </Link>
+                }
             </section>
         </div>
     );
