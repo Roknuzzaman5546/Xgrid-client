@@ -1,16 +1,21 @@
 import './AddProducts.css'
-import { useRef, useState } from 'react';
+import { useContext, useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { FaPhotoVideo } from 'react-icons/fa';
+import { AuthContext } from '../../../AuthProvider/AuthProvider';
+import useAxiosPublic from '../../../Hooks/useAxiosPublic';
+import Swal from 'sweetalert2';
 
 const AddProducts = () => {
+    const { user } = useContext(AuthContext)
+    const axiosPublic = useAxiosPublic()
     const [blogImages, setBlogImages] = useState([])
     const [showBlogImages, setShowBlogImages] = useState([])
     const [isBlogDragging, setIsBlogDragging] = useState(false)
     const fileBlogInputRef = useRef(null)
     // console.log(showBlogImages)
-    // const image_hosting_api =
-    //     "https://api.imgbb.com/1/upload?key=041c88632a7cf1ed57bab64c7c558177";
+    const image_hosting_api =
+        "https://api.imgbb.com/1/upload?key=041c88632a7cf1ed57bab64c7c558177";
 
     const onBlogFileSelect = (event) => {
         event.preventDefault();
@@ -68,46 +73,46 @@ const AddProducts = () => {
     }
 
 
-    // const {
-    //     register,
-    //     handleSubmit,
-    //     reset,
-    // } = useFormAction()
-    // const onSubmit = async (data) => {
-    //     const imageBlogFile = { image: blogImages };
-    //     const resBlog = await axiosPublic.post(image_hosting_api, imageBlogFile, {
-    //         headers: { "Content-Type": "multipart/form-data" },
-    //     });
-    //     const blogIMG = await resBlog.data.data.url;
-    //     console.log("imgbb", blogIMG)
-    //     if (resBlog.data) {
-    //         setBlogImages(blogIMG)
-    //         // console.log(res.data.data)
-    //     }
-    //     const newBlog = {
-    //         img: blogIMG,
-    //         title: data.title,
-    //         date: new Date().toLocaleDateString("en-GB"),
-    //         details: data.details,
-    //         bloggerInfo: {
-    //             bloggerName: user?.displayName,
-    //             bloggerEmail: user?.email,
-    //             bloggerImg: user?.photoURL
-    //         }
-    //     }
-    //     console.log(newBlog)
-    //     await axiosSecure.post("/blogs", newBlog)
-    //         .then(res => {
-    //             console.log(res.data)
-    //             Swal.fire(`Hey ${user.displayName} Your blog successfully added`)
-    //             reset();
-    //             setShowBlogImages([])
-    //         })
-    // }
-
     const {
         register,
+        handleSubmit,
+        reset,
     } = useForm()
+    const onSubmit = async (data) => {
+        const imageBlogFile = { image: blogImages };
+        const resBlog = await axiosPublic.post(image_hosting_api, imageBlogFile, {
+            headers: { "Content-Type": "multipart/form-data" },
+        });
+        const blogIMG = await resBlog.data.data.url;
+        console.log("imgbb", blogIMG)
+        if (resBlog.data) {
+            setBlogImages(blogIMG)
+            // console.log(res.data.data)
+        }
+        const newProducts = {
+            img: blogIMG,
+            title: data.title,
+            details: data.details,
+            date: new Date().toLocaleDateString("en-GB"),
+            bloggerInfo: {
+                bloggerName: user?.displayName,
+                bloggerEmail: user?.email,
+                bloggerImg: user?.photoURL
+            }
+        }
+        console.log(newProducts)
+        await axiosPublic.post("/products", newProducts)
+            .then(res => {
+                console.log(res.data)
+                Swal.fire(`Hey ${user.displayName} Your blog successfully added`)
+                reset();
+                setShowBlogImages([])
+            })
+    }
+
+    // const {
+    //     register,
+    // } = useForm()
     // const onSubmit = () => {
 
     // }
@@ -132,7 +137,7 @@ const AddProducts = () => {
                 </div>
                 <div className=' w-[93%] bg-white  px-6 mx-auto mt-6 mb-20 shadow-lg rounded-lg pt-5'>
                     <div>
-                        <form className="mx-auto">
+                        <form className="mx-auto" onSubmit={handleSubmit(onSubmit)}>
                             <div className='flex flex-col lg:flex-row justify-between items-center gap-3'>
                                 <div className=' w-full'>
                                     <label className="label ">

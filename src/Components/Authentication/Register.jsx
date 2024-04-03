@@ -1,5 +1,5 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import google from '../../assets/images/icons/google.png'
+import google from '../../assets/Logo/google.png'
 import { useContext } from "react";
 import Swal from "sweetalert2";
 import useAxiosPublic from "../Hooks/useAxiosPublic";
@@ -68,7 +68,7 @@ const Register = () => {
 
     return (
         <div className="pt-24">
-            <div className="w-1/3 mx-auto border-2 py-8 px-5 rounded-md">
+            <div className="w-[40%] mx-auto border-2 py-8 px-5 rounded-md">
                 <div className=" w-10/12 mx-auto">
                     <h2 className=" text-2xl font-bold my-4">Create an account</h2>
                     <form onSubmit={handleRegister}>
@@ -80,7 +80,7 @@ const Register = () => {
                         <br />
                         <input placeholder="Password" className=" w-80 rounded p-2 border-b-2 mt-3" type="password" name="password" id="" />
                         <br />
-                        <input className="btn btn-warning w-11/12 my-4 mx-auto" type="submit" value="Creat an account" />
+                        <input className="bg-[#2578B4] py-2 text-white rounded-md cursor-pointer w-11/12 my-4 mx-auto" type="submit" value="Creat an account" />
                         <p className=" text-center">Already have an account? <span className=" text-[#2578B4] font-bold"><Link to="/login">Login</Link></span></p>
                     </form>
                 </div>
