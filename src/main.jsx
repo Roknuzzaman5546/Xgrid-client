@@ -10,6 +10,8 @@ import Home from './Components/Pages/Home/Home';
 import Brand from './Components/Pages/Brand/Brand';
 import Dashboard from './Components/DashLayout/Dashboard/Dashboard';
 import Profile from './Components/DashLayout/DashPages/Profile/Profile';
+import AddProducts from './Components/DashLayout/DashPages/Products/AddProducts';
+import ManegeProducts from './Components/DashLayout/DashPages/Products/ManegeProducts';
 
 const router = createBrowserRouter([
   {
@@ -33,6 +35,14 @@ const router = createBrowserRouter([
       {
         path: "profile",
         element: <Profile></Profile>
+      },
+      {
+      path: "addProducts",
+      element: <AddProducts></AddProducts>
+      },
+      {
+        path: "manegeProducts",
+        element: <ManegeProducts></ManegeProducts>
       }
     ]
   }

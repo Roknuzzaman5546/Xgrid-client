@@ -14,14 +14,14 @@ const Dashboard = () => {
 
     return (
         <div>
-            <div className=" md:block hidden">
+            <div className=" md:block hidden mt-2">
                 <SubNavbar></SubNavbar>
             </div>
             <div className=" block lg:hidden" onClick={toggleSidebar}>
                 <FaBars></FaBars>
             </div>
             <div className="flex ">
-                <div className={`min-h-screen w-64 xl:min-w-[300px] xs:fixed z-[99999] lg:z-0 text-white transition-all duration-300 ${isSidebarOpen ? "-ml-60 lg:ml-0" : "lg:-ml-64 xl:-ml-[300px]"
+                <div className={`min-h-screen w-60 xs:fixed z-[99999] lg:z-0 text-white transition-all duration-300 ${isSidebarOpen ? "-ml-60 lg:ml-0" : "lg:-ml-64 xl:-ml-[300px]"
                     }`}>
                     {/* dashNav profile */}
                     <div className="w-60 flex items-center justify-center gap-2 overflow-hidden bg-[#2578B4] rounded-lg border-2 p-5 mb-1 mt-2">
@@ -43,11 +43,11 @@ const Dashboard = () => {
                                         <FaHouse></FaHouse>
                                         Profile</NavLink>
                                     </li>
-                                    <li><NavLink to="/dashboard/choicelist">
+                                    <li><NavLink to="/dashboard/manegeProducts">
                                         <MdManageHistory />
                                         Manege Products</NavLink>
                                     </li>
-                                    <li><NavLink to="/dashboard/choicelist">
+                                    <li><NavLink to="/dashboard/addProducts">
                                         <MdManageHistory />
                                         Add Products</NavLink>
                                     </li>
