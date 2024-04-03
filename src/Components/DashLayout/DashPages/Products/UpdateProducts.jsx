@@ -4,9 +4,15 @@ import { FaPhotoVideo } from 'react-icons/fa';
 import { AuthContext } from '../../../AuthProvider/AuthProvider';
 import useAxiosPublic from '../../../Hooks/useAxiosPublic';
 import Swal from 'sweetalert2';
+import useGetProducts from '../../../Hooks/useGetProducts';
+import { useParams } from 'react-router-dom';
 
-const AddProducts = () => {
+const UpdateProducts = () => {
     const { user } = useContext(AuthContext)
+    const [products] = useGetProducts();
+    const { id } = useParams();
+    const product = products.find(item => item._id === id)
+    console.log(product);
     const axiosPublic = useAxiosPublic()
     const [blogImages, setBlogImages] = useState([])
     const [showBlogImages, setShowBlogImages] = useState([])
@@ -112,6 +118,7 @@ const AddProducts = () => {
             })
     }
 
+
     return (
         <div>
             <div className='py-1 bg-[#f3f3f3] w-full'>
@@ -119,7 +126,7 @@ const AddProducts = () => {
                 <div className=" bg-white w-[93%] mx-auto shadow-md pl-6 py-3 mt-4 rounded-lg">
                     <ol className=" flex items-center gap-1">
                         <p>Products</p>
-                        <p className=" font-bold text-[#002172]">/ Add products</p>
+                        <p className=" font-bold text-[#002172]">/ Update products</p>
                     </ol>
                 </div>
                 <div className=' w-[93%] bg-white  px-6 mx-auto mt-6 mb-20 shadow-lg rounded-lg pt-5'>
@@ -160,7 +167,7 @@ const AddProducts = () => {
                                     </label>
                                     <select
                                         {...register("Bundle")}
-                                        name="Bundle"
+                                        defaultValue={""}
                                         required
                                         className="select select-bordered w-full"
                                     >
@@ -355,4 +362,4 @@ const AddProducts = () => {
     );
 };
 
-export default AddProducts;
+export default UpdateProducts;

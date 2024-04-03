@@ -34,8 +34,10 @@ const Dashboard = () => {
                     {/* dashNavbar menu */}
                     <div className=" w-60 min-h-screen shadow-md bg-[#2578B4] text-black font-mono font-bold text-xl flex flex-col items-center rounded-md border-2 pb-5 pt-3">
                         {/* Xgrid logo */}
-                        <div className=" text-center">
+                        <div className=" flex items-center justify-between">
+                            <h2 className=" font-bold text-black">Dashboard</h2>
                         </div>
+                        <div className="divider"></div>
                         <ul className="menu">
                             {
                                 <>
@@ -56,7 +58,8 @@ const Dashboard = () => {
                             <div className="divider"></div>
                             <li><NavLink to="/">
                                 <FaHouseDamage></FaHouseDamage>
-                                Home</NavLink></li>
+                                Home</NavLink>
+                            </li>
                         </ul>
                     </div>
                 </div>

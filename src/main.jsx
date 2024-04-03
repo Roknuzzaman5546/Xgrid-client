@@ -19,6 +19,7 @@ import {
 import AuthProvider from './Components/AuthProvider/AuthProvider';
 import Login from './Components/Authentication/Login';
 import Register from './Components/Authentication/Register';
+import UpdateProducts from './Components/DashLayout/DashPages/Products/UpdateProducts';
 const queryClient = new QueryClient()
 
 const router = createBrowserRouter([
@@ -59,6 +60,11 @@ const router = createBrowserRouter([
       {
         path: "manegeProducts",
         element: <ManegeProducts></ManegeProducts>
+      },
+      {
+        path: "updateProducts/:id",
+        element: <UpdateProducts></UpdateProducts>,
+        loader: () => fetch('http://localhost:5000/products')
       }
     ]
   }
